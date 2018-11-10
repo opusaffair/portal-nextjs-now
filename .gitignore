@@ -1,0 +1,5 @@
+.next
+.nowignore
+now.json
+node_modules
+.env
