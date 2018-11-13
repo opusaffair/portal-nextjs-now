@@ -1,43 +1,63 @@
-import { Component } from "react";
-
+import { Component, Fragment } from "react";
 import {
   InstantSearch,
   SearchBox,
   RefinementList,
-  connectMenu,
   Pagination,
-  SortBy
+  SortBy,
+  Stats,
+  connectRange
 } from "react-instantsearch-dom";
+import Head from "next/head";
 import SearchResults from "../components/SearchResults";
+import PortalVirtualMenu from "../components/PortalVirtualMenu";
+import Header from "../components/Header";
 
-const VirtualMenu = connectMenu(() => null);
+const visibleTagFilters = ["cocktails"];
+
+const VirtualRangeFilter = connectRange(() => null);
 
 class Index extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
+        <Header />
+        <Head>
+          <title>Search Demo</title>
+        </Head>
         <InstantSearch
           appId="K5XOOFWQTZ"
           apiKey="efaacbb6018b2a0aca8e5090a1a41a24"
-          indexName="events"
+          indexName="events_end_date_asc"
         >
           <SearchBox />
           <SortBy
-            defaultRefinement="events"
+            defaultRefinement="events_end_date_asc"
             items={[
               { value: "events_end_date_asc", label: "Date Asc." },
               { value: "events_end_date_desc", label: "Date Desc." }
             ]}
           />
-          <VirtualMenu
+          <PortalVirtualMenu />
+          <Stats />
+          <RefinementList
             attribute="tags"
-            defaultRefinement="Boston Opera Calendar"
+            operator="and"
+            transformItems={items => {
+              return items.filter(item =>
+                visibleTagFilters.includes(item.label)
+              );
+            }}
           />
-          <RefinementList attribute="tags" />
+          <VirtualRangeFilter
+            attribute="end_date"
+            defaultRefinement={{ min: Date.now() / 1000 }}
+            precision={0}
+          />
           <SearchResults />
           <Pagination />
         </InstantSearch>
-      </div>
+      </Fragment>
     );
   }
 }

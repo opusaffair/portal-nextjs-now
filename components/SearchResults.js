@@ -5,10 +5,7 @@ import Link from "next/link";
 function Search() {
   return (
     <div className="container">
-      <Hits
-        hitComponent={Product}
-        transformItems={items => orderBy(items, ["end_date"], ["asc"])}
-      />
+      <Hits hitComponent={Product} />
     </div>
   );
 }

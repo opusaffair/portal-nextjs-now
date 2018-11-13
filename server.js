@@ -1,5 +1,6 @@
 const express = require("express");
 const next = require("next");
+require("dotenv").config();
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -26,7 +27,7 @@ app
 
     server.listen(3000, err => {
       if (err) throw err;
-      console.log("> Ready on http://localhost:3000");
+      console.log(`Ready on port 3000`);
     });
   })
   .catch(ex => {
