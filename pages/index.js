@@ -1,36 +1,73 @@
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import {
   InstantSearch,
   SearchBox,
   RefinementList,
-  Pagination,
   SortBy,
-  Stats,
-  connectRange
+  Stats
 } from "react-instantsearch-dom";
 import Head from "next/head";
 import SearchResults from "../components/SearchResults";
 import PortalVirtualMenu from "../components/PortalVirtualMenu";
-import Header from "../components/Header";
+import TextField from "@material-ui/core/TextField";
+import { withStyles } from "@material-ui/core/styles";
+import DateFilter from "../components/DateFilter";
+import { todayPlusDays, dateToUnixTs } from "../lib/date-helpers";
 
-const visibleTagFilters = ["cocktails"];
+const visibleTagFilters = [
+  "Early Music",
+  "New Work / Premiere",
+  "Holiday",
+  "Shakespeare / Classical Theater",
+  "Musical",
+  "Opera"
+];
 
-const VirtualRangeFilter = connectRange(() => null);
+const styles = theme => ({
+  root: {
+    flexGrow: 1
+  }
+});
 
 class Index extends Component {
+  state = {
+    dateMin: dateToUnixTs(todayPlusDays()),
+    dateMax: dateToUnixTs(todayPlusDays(7))
+  };
+  handleDateRangeChange = (name, value) => {
+    console.table({ name, value });
+    this.setState({ [name]: value });
+  };
   render() {
     return (
-      <Fragment>
-        <Header />
+      <div className="container">
         <Head>
           <title>Search Demo</title>
         </Head>
         <InstantSearch
-          appId="K5XOOFWQTZ"
-          apiKey="efaacbb6018b2a0aca8e5090a1a41a24"
+          appId={process.env.ALGOLIA_APP_ID}
+          apiKey={process.env.ALGOLIA_API_KEY}
           indexName="events_end_date_asc"
         >
           <SearchBox />
+          <DateFilter
+            attribute="end_date"
+            name="dateMin"
+            label="Start Date"
+            id="startDate"
+            min={this.state.dateMin}
+            timestamp={this.state.dateMin}
+            handleDateChange={this.handleDateRangeChange}
+          />
+          <DateFilter
+            attribute="start_date"
+            name="dateMax"
+            label="End Date"
+            id="endDate"
+            max={this.state.dateMax}
+            timestamp={this.state.dateMax}
+            handleDateChange={this.handleDateRangeChange}
+          />
           <SortBy
             defaultRefinement="events_end_date_asc"
             items={[
@@ -39,7 +76,6 @@ class Index extends Component {
             ]}
           />
           <PortalVirtualMenu />
-          <Stats />
           <RefinementList
             attribute="tags"
             operator="and"
@@ -49,17 +85,12 @@ class Index extends Component {
               );
             }}
           />
-          <VirtualRangeFilter
-            attribute="end_date"
-            defaultRefinement={{ min: Date.now() / 1000 }}
-            precision={0}
-          />
           <SearchResults />
-          <Pagination />
+          <Stats />
         </InstantSearch>
-      </Fragment>
+      </div>
     );
   }
 }
 
-export default Index;
+export default withStyles(styles, { withTheme: true })(Index);

@@ -1,22 +1,54 @@
 import { withRouter } from "next/router";
-
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
 import React, { Component, Fragment } from "react";
-import Head from "next/head";
+import Loading from "../components/Loading";
 
-import Header from "../components/Header";
-import EventDetail from "../components/EventDetail";
+export const EVENT_DETAIL_QUERY = gql`
+  query eventDetail($slug: String!) {
+    event(slug: $slug) {
+      title
+      image_url
+      organizer_desc
+      slug
+    }
+  }
+`;
 
 export default withRouter(
   class Events extends Component {
     render() {
+      const variables = {
+        slug: this.props.router.query.slug
+      };
       return (
         <Fragment>
-          <Header />
-          <div>Events {this.props.router.query.slug}</div>
-          <Head>
-            <title>{this.props.router.query.slug}</title>
-          </Head>
-          <EventDetail slug={this.props.router.query.slug} />
+          <Query query={EVENT_DETAIL_QUERY} variables={variables}>
+            {({ loading, error, data }) => {
+              if (error) return <div>Errors</div>;
+              if (loading) return <Loading />;
+              const { event } = data;
+              if (!event) return <div>No match</div>;
+              return (
+                <section>
+                  <h1>{event.title}</h1>
+                  <img
+                    src={`${event.image_url}?w=620&h=350&fit=crop&crop=faces`}
+                  />
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: `${event.organizer_desc}`
+                    }}
+                  />
+                  <div>
+                    <a href={`https://www.opusaffair.com/events/${event.slug}`}>
+                      Link to Opus listing
+                    </a>
+                  </div>
+                </section>
+              );
+            }}
+          </Query>
         </Fragment>
       );
     }
