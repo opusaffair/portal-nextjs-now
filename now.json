@@ -1,0 +1,8 @@
+{
+    "version": 1,
+    "env":{
+      "ALGOLIA_APP_ID": "@algolia-app-id",
+      "ALGOLIA_API_KEY":"@algolia-api-key",
+      "GRAPHQL_URI": "https://opus-portals-graphql.now.sh/"
+    }
+  }
