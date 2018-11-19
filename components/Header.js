@@ -23,9 +23,6 @@ const Header = () => {
         <Link href="/about">
           <Button color="inherit">About</Button>
         </Link>
-        <Link href="/submit">
-          <Button color="inherit">Submit</Button>
-        </Link>
       </Toolbar>
     </AppBar>
   );
