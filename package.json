@@ -19,8 +19,7 @@
     "react-apollo": "^2.2.4",
     "react-dom": "^16.6.1",
     "react-imgix": "^8.3.1",
-    "react-instantsearch-dom": "^5.3.2",
-    "react-wufoo-embed": "^1.0.0"
+    "react-instantsearch-dom": "^5.3.2"
   },
   "devDependencies": {
     "now-env": "^3.1.0"
