@@ -1,8 +1,10 @@
 {
-    "version": 1,
+    "version": 2,
+    "builds": [
+      { "src": "package.json", "use": "@now/next" }],
     "env":{
       "ALGOLIA_APP_ID": "@algolia-app-id",
       "ALGOLIA_API_KEY":"@algolia-api-key",
-      "GRAPHQL_URI": "https://opus-portals-graphql.now.sh/"
+      "GRAPHQL_URI": "@graphql-uri"
     }
   }

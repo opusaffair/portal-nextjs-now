@@ -6,6 +6,8 @@ import {
   Configure
 } from "react-instantsearch-dom";
 import Head from "next/head";
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
 import SearchResults from "../components/SearchResults";
 import PortalVirtualMenu from "../components/PortalVirtualMenu";
 
@@ -19,8 +21,8 @@ class Index extends Component {
           <title>Search Demo Upcoming</title>
         </Head>
         <InstantSearch
-          appId={process.env.ALGOLIA_APP_ID}
-          apiKey={process.env.ALGOLIA_API_KEY}
+          appId={publicRuntimeConfig.ALGOLIA_APP_ID}
+          apiKey={publicRuntimeConfig.ALGOLIA_API_KEY}
           indexName="events_end_date_asc"
         >
           <PortalVirtualMenu />

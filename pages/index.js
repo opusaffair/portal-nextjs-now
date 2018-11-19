@@ -11,6 +11,8 @@ import SearchResults from "../components/SearchResults";
 import PortalVirtualMenu from "../components/PortalVirtualMenu";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
 import DateFilter from "../components/DateFilter";
 import { todayPlusDays, dateToUnixTs } from "../lib/date-helpers";
 
@@ -45,8 +47,8 @@ class Index extends Component {
           <title>Search Demo</title>
         </Head>
         <InstantSearch
-          appId={process.env.ALGOLIA_APP_ID}
-          apiKey={process.env.ALGOLIA_API_KEY}
+          appId={publicRuntimeConfig.ALGOLIA_APP_ID}
+          apiKey={publicRuntimeConfig.ALGOLIA_API_KEY}
           indexName="events_end_date_asc"
         >
           <SearchBox />

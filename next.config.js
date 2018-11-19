@@ -1,22 +1,16 @@
-require("dotenv").config();
-
-const path = require("path");
-const Dotenv = require("dotenv-webpack");
+const webpack = require("webpack");
+/**
+ * After the next require you can use process.env to get your secrets
+ */
+if (process.env.NODE_ENV === "development") {
+  require("now-env");
+}
 
 module.exports = {
-  webpack: config => {
-    config.plugins = config.plugins || [];
-
-    config.plugins = [
-      ...config.plugins,
-
-      // Read the .env file
-      new Dotenv({
-        path: path.join(__dirname, ".env"),
-        systemvars: true
-      })
-    ];
-
-    return config;
+  publicRuntimeConfig: {
+    // Will be available on both server and client
+    ALGOLIA_APP_ID: process.env.ALGOLIA_APP_ID,
+    ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
+    GRAPHQL_URI: process.env.GRAPHQL_URI
   }
 };
