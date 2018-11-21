@@ -6,6 +6,7 @@ import JssProvider from "react-jss/lib/JssProvider";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import PageLayout from "../components/PageLayout";
+
 import getPageContext from "../lib/getPageContext";
 
 class MyApp extends App {
@@ -35,7 +36,7 @@ class MyApp extends App {
             >
               <CssBaseline />
               <PageLayout>
-                <Component {...pageProps} />
+                <Component pageContext={this.pageContext} {...pageProps} />
               </PageLayout>
             </MuiThemeProvider>
           </JssProvider>

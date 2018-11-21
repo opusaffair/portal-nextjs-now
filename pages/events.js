@@ -3,12 +3,11 @@ import { Query } from "react-apollo";
 import Head from "next/head";
 import gql from "graphql-tag";
 import React, { Component, Fragment } from "react";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
 import Loading from "../components/Loading";
 import { displayTimeDateRange } from "../lib/date-helpers";
-import { Image, Transformation } from "cloudinary-react";
-import { Typography, Button } from "@material-ui/core";
-import Hidden from "@material-ui/core/Hidden";
-import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   img: {

@@ -4,12 +4,11 @@ import Link from "next/link";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import { Image } from "cloudinary-react";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
+
 import { displayTimeDateRange } from "../lib/date-helpers";
-import Hidden from "@material-ui/core/Hidden";
 
 const styles = theme => ({
   img: {
@@ -32,20 +31,6 @@ const CustomHits = ({ hits, marginLeft, hasMore, refine, theme, classes }) => (
             <a>
               <Card>
                 <div>
-                  {/* <Hidden>
-                    <Image
-                      type="fetch"
-                      dpr="auto"
-                      cloudName="opusaffair"
-                      publicId={event.image_url}
-                      fetchFormat="auto"
-                      gravity="faces"
-                      height="150"
-                      width="262"
-                      zoom="0.2"
-                      crop="fill"
-                    />
-                  </Hidden> */}
                   <picture>
                     <source
                       media={`(min-width: ${theme.breakpoints.values.xl}px)`}
