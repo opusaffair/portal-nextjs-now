@@ -34,7 +34,7 @@ const styles = theme => ({
 class Index extends Component {
   state = {
     dateMin: dateToUnixTs(todayPlusDays()),
-    dateMax: dateToUnixTs(todayPlusDays(7))
+    dateMax: dateToUnixTs(todayPlusDays(30))
   };
   handleDateRangeChange = (name, value) => {
     console.table({ name, value });

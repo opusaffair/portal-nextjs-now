@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const Theme = createMuiTheme({
+const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#42404d",
@@ -17,9 +17,9 @@ const Theme = createMuiTheme({
   },
   typography: {
     // Use the system font instead of the default Roboto font.
-    fontFamily: ['"Libre Baskerville"', '"Roboto Condensed"'].join(","),
+    fontFamily: ["Roboto Condensed"].join(","),
     useNextVariants: true
   }
 });
 
-export default Theme;
+export default theme;

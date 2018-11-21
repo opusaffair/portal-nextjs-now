@@ -26,7 +26,7 @@ class Index extends Component {
           indexName="events_end_date_asc"
         >
           <PortalVirtualMenu />
-          <Configure hitsPerPage={4} />
+          <Configure hitsPerPage={8} />
           <VirtualDateMenu
             attribute="end_date"
             defaultRefinement={{ min: Date.now() / 1000 }}

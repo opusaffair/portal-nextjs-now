@@ -1,26 +1,28 @@
 import React, { Component, Fragment } from "react";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Theme from "./Theme";
+import { withStyles } from "@material-ui/core/styles";
 import Header from "./Header";
+
+const styles = theme => ({
+  root: {
+    marginTop: theme.spacing.unit * 10,
+    width: "100%",
+    maxWidth: theme.breakpoints.values.lg,
+    alignItems: "center",
+    margin: "auto",
+    padding: `0 ${theme.spacing.unit}px `
+  }
+});
 
 class PageLayout extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <MuiThemeProvider theme={Theme}>
-        <CssBaseline />
+      <div className={classes.root}>
         <Header />
-
         {this.props.children}
-
-        <style jsx global>{`
-          body {
-            padding-top: 64px;
-          }
-        `}</style>
-      </MuiThemeProvider>
+      </div>
     );
   }
 }
 
-export default PageLayout;
+export default withStyles(styles, { withTheme: true })(PageLayout);

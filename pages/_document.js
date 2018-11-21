@@ -31,6 +31,10 @@ export default class MyDocument extends Document {
           />
           <link
             rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+          />
+          <link
+            rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.0/themes/reset-min.css"
           />
           <link

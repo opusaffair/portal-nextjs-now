@@ -9,7 +9,7 @@ const Header = () => {
     <AppBar postition="static" color="primary">
       <Toolbar>
         <Link href="/">
-          <Button color="inherit">Demo Calendar Microsite</Button>
+          <Button color="inherit">Demo</Button>
         </Link>
 
         <Link href="/upcoming">
