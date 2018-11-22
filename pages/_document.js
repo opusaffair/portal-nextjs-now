@@ -19,7 +19,7 @@ class MyDocument extends Document {
           />
           <meta
             name="viewport"
-            content="initial-scale=1.0, minimum-scale=1, width=device-width"
+            content="initial-scale=1.0, minimum-scale=1.0, width=device-width"
             key="viewport"
           />
           <link rel="icon" href="/static/favicon.ico" key="favicon" />

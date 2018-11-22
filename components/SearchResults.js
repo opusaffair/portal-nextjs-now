@@ -14,6 +14,9 @@ const styles = theme => ({
   img: {
     height: "auto",
     width: "100%"
+  },
+  item: {
+    height: "100%"
   }
 });
 
@@ -29,7 +32,7 @@ const CustomHits = ({ hits, marginLeft, hasMore, refine, theme, classes }) => (
           {/* For dev purposes, switching away from clean URLs */}
           <Link href={`/events?slug=${event.slug}`}>
             <a>
-              <Card>
+              <Card className={classes.item}>
                 <div>
                   <picture>
                     <source
@@ -69,11 +72,11 @@ const CustomHits = ({ hits, marginLeft, hasMore, refine, theme, classes }) => (
                   </picture>
                 </div>
                 <CardContent>
-                  <Typography>
-                    <Highlight attribute="title" hit={event} />
-                  </Typography>
+                  <Typography variant="h5">{event.title}</Typography>
                   <Typography>
                     {displayTimeDateRange(event.start_date, event.end_date)}
+                    {event.start_date && event.end_date && <br />}
+                    {event.organizers}
                   </Typography>
                 </CardContent>
               </Card>
