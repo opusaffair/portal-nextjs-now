@@ -9,7 +9,10 @@ const styles = theme => ({
     maxWidth: theme.breakpoints.values.lg,
     alignItems: "center",
     margin: "auto",
-    padding: `0 ${theme.spacing.unit}px `
+    padding: `0 ${theme.spacing.unit}px`
+  },
+  "a:active": {
+    color: theme.palette.secondary.main
   }
 });
 

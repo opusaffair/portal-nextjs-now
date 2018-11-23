@@ -1,12 +1,11 @@
 import App, { Container } from "next/app";
 import React from "react";
-import withApolloClient from "../lib/with-apollo-client";
-import { ApolloProvider } from "react-apollo";
 import JssProvider from "react-jss/lib/JssProvider";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { ApolloProvider } from "react-apollo";
+import withApolloClient from "../lib/with-apollo-client";
 import PageLayout from "../components/PageLayout";
-
 import getPageContext from "../lib/getPageContext";
 
 class MyApp extends App {
