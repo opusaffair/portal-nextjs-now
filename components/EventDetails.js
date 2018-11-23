@@ -6,7 +6,7 @@ import gql from "graphql-tag";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
+import Error from "../pages/_error";
 import { displayTimeDateRange } from "../lib/date-helpers";
 import Loading from "./Loading";
 
@@ -47,7 +47,7 @@ const EventDetails = ({ theme, classes, slug }) => {
   return (
     <Query query={eventDetailQuery} variables={eventDetailQueryVars}>
       {({ loading, error, data }) => {
-        if (error) return <div>Errors</div>;
+        if (error) return <Error error={error} />;
         if (loading) return <Loading />;
         const { event } = data;
         if (!event) return <div>No match</div>;

@@ -9,7 +9,6 @@ import {
 import Head from "next/head";
 import SearchResults from "../components/SearchResults";
 import PortalVirtualMenu from "../components/PortalVirtualMenu";
-import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
 import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
