@@ -87,8 +87,7 @@ const CustomHits = ({ hits, marginLeft, hasMore, refine, theme, classes }) => (
       ))}
     </Grid>
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <Divider />
-      <Button
+      {/* <Button
         onClick={() => {
           if (hasMore) {
             refine();
@@ -100,7 +99,7 @@ const CustomHits = ({ hits, marginLeft, hasMore, refine, theme, classes }) => (
         style={{ alignSelf: "center", marginLeft, marginBottom: 10 }}
       >
         Load More
-      </Button>
+      </Button> */}
     </div>
   </Fragment>
 );
