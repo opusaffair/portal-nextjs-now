@@ -1,5 +1,7 @@
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
+import Link from "next/link";
+
 const styles = () => ({
   logo: {
     textTransform: "none",
@@ -8,9 +10,11 @@ const styles = () => ({
   }
 });
 const Logo = ({ classes }) => (
-  <Button color="inherit" className={classes.logo}>
-    StagePage
-  </Button>
+  <Link href="/">
+    <Button color="inherit" className={classes.logo}>
+      StagePage
+    </Button>
+  </Link>
 );
 
 export default withStyles(styles)(Logo);

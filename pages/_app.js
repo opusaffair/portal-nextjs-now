@@ -7,6 +7,8 @@ import { ApolloProvider } from "react-apollo";
 import withApolloClient from "../lib/with-apollo-client";
 import PageLayout from "../components/PageLayout";
 import getPageContext from "../lib/getPageContext";
+import NextSeo from "next-seo";
+import SEO from "../next-seo.config";
 
 class CalApp extends App {
   constructor(props) {
@@ -35,6 +37,7 @@ class CalApp extends App {
             >
               <CssBaseline />
               <PageLayout>
+                <NextSeo config={SEO} />
                 <Component pageContext={this.pageContext} {...pageProps} />
               </PageLayout>
             </MuiThemeProvider>

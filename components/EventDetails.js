@@ -6,6 +6,7 @@ import gql from "graphql-tag";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import NextSeo from "next-seo";
 import Error from "../pages/_error";
 import { displayTimeDateRange } from "../lib/date-helpers";
 import Loading from "./Loading";
@@ -86,9 +87,13 @@ const EventDetails = ({ theme, classes, slug }) => {
             <Typography component="h1" variant="h2">
               {event.title}
             </Typography>
-            <Head>
-              <title>{event.title}</title>
-            </Head>
+            <NextSeo
+              config={{
+                title: event.title,
+                description: event.organizer_desc,
+                canonical: `https://stagepage.now.sh/events/${event.slug}`
+              }}
+            />
             <Typography variant="h3">
               {displayTimeDateRange(event.start_datetime, event.end_datetime)}
             </Typography>
