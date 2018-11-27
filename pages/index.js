@@ -10,7 +10,7 @@ const createURL = state => `?${qs.stringify(state)}`;
 const searchStateToUrl = searchState =>
   searchState ? `${window.location.pathname}?${qs.stringify(searchState)}` : "";
 
-export default class extends React.Component {
+class Index extends React.Component {
   state = {
     searchState: this.props.searchState
   };
@@ -24,8 +24,10 @@ export default class extends React.Component {
     const searchState = params.asPath.includes("?")
       ? qs.parse(params.asPath.substring(params.asPath.indexOf("?") + 1))
       : {};
-    const resultsState = await findResultsState(SearchPage, { searchState });
-    return { resultsState, searchState };
+    if (!process.browser) {
+      const resultsState = await findResultsState(SearchPage, { searchState });
+      return { resultsState, searchState };
+    } else return { searchState };
   }
 
   onSearchStateChange = searchState => {
@@ -49,16 +51,14 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <SearchPage
-            searchState={this.state.searchState}
-            resultsState={this.props.resultsState}
-            onSearchStateChange={this.onSearchStateChange}
-            createURL={createURL}
-          />
-        </div>
-      </div>
+      <SearchPage
+        searchState={this.state.searchState}
+        resultsState={this.props.resultsState}
+        onSearchStateChange={this.onSearchStateChange}
+        createURL={createURL}
+      />
     );
   }
 }
+
+export default Index;

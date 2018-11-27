@@ -5,3 +5,6 @@ package-lock.json
 .code
 .env
 now-secrets.json
+node_modules
+.next
+yarn.lock

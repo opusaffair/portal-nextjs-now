@@ -1,12 +1,13 @@
 {
     "version": 2,
     "builds": [
-      { "src": "package.json", "use": "@now/next", "config":{"maxLambdaSize":"18mb"} } ],
+      { "src": "package.json", "use": "@now/next@canary", "config":{"maxLambdaSize":"18mb"} } ],
     "env":{
       "ALGOLIA_APP_ID": "@algolia-app-id",
       "ALGOLIA_API_KEY":"@algolia-api-key",
       "GRAPHQL_URI": "@graphql-uri"
     },
     "routes":[
-      { "src": "/events/(.*)", "dest": "/events?slug=$1" }]
+      { "src": "/events/(.*)", "dest": "/events?slug=$1" }
+    ]
   }

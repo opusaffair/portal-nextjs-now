@@ -3,11 +3,20 @@ import Link from "next/link";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
 
-const Header = () => {
+const styles = theme => ({
+  innerToolbar: {
+    maxWidth: theme.breakpoints.values.lg,
+    alignSelf: "center",
+    width: "100%"
+  }
+});
+
+const Header = ({ classes }) => {
   return (
     <AppBar postition="static" color="primary">
-      <Toolbar>
+      <Toolbar className={classes.innerToolbar}>
         <Link href="/">
           <Button color="inherit">Demo</Button>
         </Link>
@@ -28,4 +37,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withStyles(styles, { withTheme: true })(Header);

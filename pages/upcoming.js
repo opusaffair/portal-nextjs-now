@@ -8,7 +8,7 @@ import {
 import Head from "next/head";
 import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
-import SearchResults from "../components/SearchResults";
+import InfiniteSearchResults from "../components/InfiniteSearchResults";
 import PortalVirtualMenu from "../components/PortalVirtualMenu";
 
 const VirtualDateMenu = connectRange(() => null);
@@ -32,7 +32,7 @@ class Index extends Component {
             defaultRefinement={{ min: Date.now() / 1000 }}
             precision={0}
           />
-          <SearchResults />
+          <InfiniteSearchResults />
           <Stats />
         </InstantSearch>
       </div>

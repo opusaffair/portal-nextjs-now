@@ -7,7 +7,6 @@ import { ApolloProvider } from "react-apollo";
 import withApolloClient from "../lib/with-apollo-client";
 import PageLayout from "../components/PageLayout";
 import getPageContext from "../lib/getPageContext";
-import { todayPlusDays, dateToUnixTs } from "../lib/date-helpers";
 
 class CalApp extends App {
   constructor(props) {

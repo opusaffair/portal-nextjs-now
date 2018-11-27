@@ -43,12 +43,8 @@ export default class extends React.Component {
               }}
             />
           </menu>
-
           <SearchResults />
         </content>
-        <footer>
-          <Pagination />
-        </footer>
       </InstantSearch>
     );
   }
