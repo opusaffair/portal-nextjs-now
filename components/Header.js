@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
+import Logo from "./Logo";
 
 const styles = theme => ({
   innerToolbar: {
@@ -18,7 +19,7 @@ const Header = ({ classes }) => {
     <AppBar postition="static" color="primary">
       <Toolbar className={classes.innerToolbar}>
         <Link href="/">
-          <Button color="inherit">Demo</Button>
+          <Logo />
         </Link>
 
         <Link href="/upcoming">
