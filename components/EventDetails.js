@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -24,6 +22,13 @@ const styles = theme => ({
   },
   para: {
     fontFamily: theme.typography.body2.fontFamily
+  },
+  title: {
+    fontWeight: 700,
+    fontSize: "2.75em"
+  },
+  date: {
+    fontSize: "2em"
   }
 });
 
@@ -84,17 +89,32 @@ const EventDetails = ({ theme, classes, slug }) => {
               />
             </picture>
 
-            <Typography component="h1" variant="h2">
+            <Typography
+              component="h1"
+              variant="h2"
+              className={classes.title}
+              gutterBottom
+            >
               {event.title}
             </Typography>
             <NextSeo
               config={{
                 title: event.title,
                 description: event.organizer_desc,
-                canonical: `https://stagepage.now.sh/events/${event.slug}`
+                canonical: `https://stagepage.now.sh/events/${event.slug}`,
+                images: [
+                  {
+                    url: `https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces,h_500,w_1200,z_0.3/${
+                      event.image_url
+                    }`,
+                    width: 1200,
+                    height: 500,
+                    alt: event.title
+                  }
+                ]
               }}
             />
-            <Typography variant="h3">
+            <Typography variant="h3" className={classes.date}>
               {displayTimeDateRange(event.start_datetime, event.end_datetime)}
             </Typography>
 
