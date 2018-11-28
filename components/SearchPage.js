@@ -24,8 +24,13 @@ const styles = theme => ({
 });
 
 class SearchPage extends React.Component {
+  state = { open: true };
+  togglePanel = () => {
+    this.setState({ open: !this.state.open });
+  };
   render() {
     const { classes } = this.props;
+    const { open } = this.state;
     return (
       <InstantSearch
         appId={publicRuntimeConfig.ALGOLIA_APP_ID}
@@ -39,9 +44,9 @@ class SearchPage extends React.Component {
         <Configure hitsPerPage={12} />
         <PortalVirtualMenu />
 
-        <ExpansionPanel>
+        <ExpansionPanel expanded={open} onChange={this.togglePanel}>
           <ExpansionPanelSummary expandIcon={<SortIcon />}>
-            <Typography>Show Filters</Typography>
+            <Typography>{open ? "Hide" : "Show"} Filters</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Grid container>

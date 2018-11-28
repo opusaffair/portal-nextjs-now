@@ -26,7 +26,8 @@ const styles = theme => ({
     "& .ais-Pagination-item--selected": {},
     "& .ais-Pagination-item--disabled": {},
     "& .ais-Pagination-link": {
-      color: theme.palette.secondary.main
+      color: theme.palette.secondary.main,
+      borderRadius: theme.shape.borderRadius
     },
     "& .ais-Pagination-link--selected": {
       backgroundColor: theme.palette.primary.main,

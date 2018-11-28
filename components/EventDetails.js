@@ -1,6 +1,7 @@
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -10,6 +11,11 @@ import { displayTimeDateRange } from "../lib/date-helpers";
 import Loading from "./Loading";
 
 const styles = theme => ({
+  root: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
+  },
   link: {
     color: theme.palette.secondary.main,
     "&:hover": {
@@ -29,6 +35,9 @@ const styles = theme => ({
   },
   date: {
     fontSize: "2em"
+  },
+  opuslink: {
+    marginTop: theme.spacing.unit * 10
   }
 });
 
@@ -88,15 +97,48 @@ const EventDetails = ({ theme, classes, slug }) => {
                 className={classes.img}
               />
             </picture>
+            <Paper className={classes.root}>
+              <Typography
+                component="h1"
+                variant="h2"
+                className={classes.title}
+                gutterBottom
+              >
+                {event.title}
+              </Typography>
+              <Typography variant="h3" className={classes.date}>
+                {displayTimeDateRange(event.start_datetime, event.end_datetime)}
+              </Typography>
+              <Grid container>
+                <Grid item lg={9} md={12}>
+                  <span
+                    className={classes.para}
+                    dangerouslySetInnerHTML={{
+                      __html: `${event.organizer_desc}`
+                    }}
+                  />
+                </Grid>
+                <Grid item lg={3} md={12}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    href={event.ticket_link}
+                    target="_blank"
+                  >
+                    Official Site
+                  </Button>
+                </Grid>
+              </Grid>
 
-            <Typography
-              component="h1"
-              variant="h2"
-              className={classes.title}
-              gutterBottom
-            >
-              {event.title}
-            </Typography>
+              <Typography className={classes.opuslink}>
+                <a
+                  className={classes.link}
+                  href={`https://www.opusaffair.com/events/${event.slug}`}
+                >
+                  Link to Opus Affair calendar
+                </a>
+              </Typography>
+            </Paper>
             <NextSeo
               config={{
                 title: event.title,
@@ -114,33 +156,6 @@ const EventDetails = ({ theme, classes, slug }) => {
                 ]
               }}
             />
-            <Typography variant="h3" className={classes.date}>
-              {displayTimeDateRange(event.start_datetime, event.end_datetime)}
-            </Typography>
-
-            <span
-              className={classes.para}
-              dangerouslySetInnerHTML={{
-                __html: `${event.organizer_desc}`
-              }}
-            />
-
-            <Button
-              variant="contained"
-              color="secondary"
-              href={event.ticket_link}
-              target="_blank"
-            >
-              Official Site
-            </Button>
-            <Typography>
-              <a
-                className={classes.link}
-                href={`https://www.opusaffair.com/events/${event.slug}`}
-              >
-                Link to Opus Affair calendar
-              </a>
-            </Typography>
           </div>
         );
       }}

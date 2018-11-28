@@ -10,7 +10,8 @@ const styles = theme => ({
   innerToolbar: {
     maxWidth: theme.breakpoints.values.lg,
     alignSelf: "center",
-    width: "100%"
+    width: "100%",
+    justifyContent: "space-between"
   }
 });
 

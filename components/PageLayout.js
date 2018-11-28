@@ -4,7 +4,7 @@ import Header from "./Header";
 
 const styles = theme => ({
   root: {
-    marginTop: theme.spacing.unit * 10,
+    marginTop: theme.spacing.unit * 8,
     width: "100%",
     maxWidth: theme.breakpoints.values.lg,
     alignItems: "center",
