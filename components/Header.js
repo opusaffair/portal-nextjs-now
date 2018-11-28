@@ -19,13 +19,13 @@ const Header = ({ classes }) => {
     <AppBar postition="static" color="primary">
       <Toolbar className={classes.innerToolbar}>
         <Logo />
-        <Link href="/upcoming">
+        {/* <Link href="/upcoming">
           <Button color="inherit">Upcoming</Button>
         </Link>
 
         <Link href="/past">
           <Button color="inherit">Past</Button>
-        </Link>
+        </Link> */}
 
         <Link href="/about">
           <Button color="inherit">About</Button>

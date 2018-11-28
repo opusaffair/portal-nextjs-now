@@ -12,7 +12,7 @@ class DateMinMax extends Component {
     super(props);
     this.state = {
       min: dateToUnixTs(todayPlusDays(0)),
-      max: dateToUnixTs(todayPlusDays(30))
+      max: dateToUnixTs(todayPlusDays(180))
     };
     const { searchState } = props;
     const { range } = searchState;
