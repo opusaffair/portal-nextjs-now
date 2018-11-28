@@ -118,12 +118,13 @@ const EventDetails = ({ theme, classes, slug }) => {
                     }}
                   />
                 </Grid>
-                <Grid item lg={3} md={12}>
+                <Grid item lg={3} md={6} sm={12} xs={12}>
                   <Button
                     variant="contained"
                     color="secondary"
                     href={event.ticket_link}
                     target="_blank"
+                    fullWidth
                   >
                     Official Site
                   </Button>
