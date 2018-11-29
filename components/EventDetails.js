@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import Grid from "@material-ui/core/Grid";
@@ -17,9 +18,9 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit * 2
   },
   link: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
     "&:hover": {
-      color: theme.palette.primary.main
+      color: theme.palette.secondary.main
     }
   },
   img: {
@@ -34,10 +35,20 @@ const styles = theme => ({
     fontSize: "2.75em"
   },
   date: {
-    fontSize: "2em"
+    fontSize: "1.8em"
   },
   opuslink: {
     marginTop: theme.spacing.unit * 10
+  },
+  venueTitle: {
+    fontWeight: 700,
+    fontSize: "1.2em",
+    paddingTop: theme.spacing.unit * 2
+  },
+  venueAddress: {},
+  presentedBy: {
+    fontWeight: 700,
+    fontSize: "1.4em"
   }
 });
 
@@ -51,6 +62,16 @@ export const eventDetailQuery = gql`
       start_datetime
       end_datetime
       ticket_link
+      org_names
+      venues {
+        name
+        address
+        city
+        state
+        zip_code
+        latitude
+        longitude
+      }
     }
   }
 `;
@@ -66,6 +87,7 @@ const EventDetails = ({ theme, classes, slug }) => {
         if (loading) return <Loading />;
         const { event } = data;
         if (!event) return <div>No match</div>;
+        const { venues, org_names } = event;
         return (
           <div>
             <picture>
@@ -98,6 +120,9 @@ const EventDetails = ({ theme, classes, slug }) => {
               />
             </picture>
             <Paper className={classes.root}>
+              <Typography className={classes.superTitle}>
+                {event.creative_supertitle}
+              </Typography>
               <Typography
                 component="h1"
                 variant="h2"
@@ -109,8 +134,13 @@ const EventDetails = ({ theme, classes, slug }) => {
               <Typography variant="h3" className={classes.date}>
                 {displayTimeDateRange(event.start_datetime, event.end_datetime)}
               </Typography>
-              <Grid container>
-                <Grid item lg={9} md={12}>
+              {org_names && (
+                <Typography variant="h3" className={classes.presentedBy}>
+                  Presented by {org_names}
+                </Typography>
+              )}
+              <Grid container spacing={24}>
+                <Grid item lg={8} md={12}>
                   <span
                     className={classes.para}
                     dangerouslySetInnerHTML={{
@@ -128,6 +158,33 @@ const EventDetails = ({ theme, classes, slug }) => {
                   >
                     Official Site
                   </Button>
+                  {venues && (
+                    <Fragment>
+                      <Typography variant="h5" className={classes.venueTitle}>
+                        Venue{venues.length > 1 ? "s" : ""}
+                      </Typography>
+                      <Typography className={classes.venueAddress}>
+                        {venues.map(venue => {
+                          return (
+                            <div>
+                              {venue.name}
+                              <br />
+                              <a
+                                target="_blank"
+                                href={`https://www.google.com/maps/dir//(${
+                                  venue.latitude
+                                },%20${venue.longitude})`}
+                              >{`${venue.address} ${venue.city}, ${
+                                venue.state
+                              } ${venue.zip_code}`}</a>
+                              <br />
+                              <br />
+                            </div>
+                          );
+                        })}
+                      </Typography>
+                    </Fragment>
+                  )}
                 </Grid>
               </Grid>
 
@@ -136,7 +193,7 @@ const EventDetails = ({ theme, classes, slug }) => {
                   className={classes.link}
                   href={`https://www.opusaffair.com/events/${event.slug}`}
                 >
-                  Link to Opus Affair calendar
+                  admin
                 </a>
               </Typography>
             </Paper>

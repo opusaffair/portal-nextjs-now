@@ -19,7 +19,7 @@ import SearchBox from "./SearchBox";
 
 const styles = theme => ({
   filters: {
-    paddingBottom: theme.spacing.units * 5
+    paddingBottom: theme.spacing.units * 4
   }
 });
 
