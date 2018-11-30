@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "alias": ["stagepage"],
+    "alias": ["stagepage.now.sh"],
     "builds": [
       { "src": "package.json", "use": "@now/next@canary", "config":{"maxLambdaSize":"18mb"} },
     {"src":"loaderio-314f709d8ac2d89d0ac14a8ea80230d8.txt","use": "@now/static"} ],
