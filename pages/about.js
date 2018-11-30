@@ -1,26 +1,53 @@
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
 
-const About = () => (
-  <div className="container">
-    <Typography variant="h2" gutterBottom>
+const styles = theme => ({
+  root: {
+    "& h1, h2, h3": {
+      fontWeight: 700,
+      paddingTop: theme.spacing.unit
+    },
+    "& h1": {
+      fontSize: "2.8em"
+    },
+    "& h2": {
+      fontSize: "2.5em"
+    },
+    "& h3": {
+      fontSize: "2.2em"
+    },
+    "& h4": {
+      fontSize: "1.5em"
+    }
+  },
+  paper: {
+    ...theme.mixins.gutters(),
+    padding: theme.spacing.unit
+  }
+});
+
+const About = ({ classes }) => (
+  <div className="container" className={classes.root}>
+    <Typography variant="h1" gutterBottom>
       StagePage
     </Typography>
     <Typography paragraph>
-      Barbarina lo chiuso duettino contadine vien sedia infamar fioretti
-      padroncina. Affetto tasca polmon bene gi meco voi fiori ceffo non! Io la
-      con uom te farla ei Cherubino costui aria! Volpe cor Marcellina si qua
-      rimandate signor Susanna vien egli. Con me in da Susanna Contessa per col
-      qui il? Questo codesto la dell scena giusto terr non vuol di! Che vece ch
-      bassezza allo ha entri qualche poverino onest. Ben serbo no Conte mi colla
-      sposo Barbarina par ella? In sento dov Contessa ha porta aiuto schiaffi
-      sbalordita anco. Atto vostro aita posto ardire fa ed questo il piano.
-      Pentito sempre madre mio che ho colpo si ti ha. Tutto altre mia andiamo
-      Conte Figaro il la un esser. Destino ma com furor venere accompagna obliar
-      per antonio cosa.
+      StagePage lists performances from StageSource members—including theater
+      artists, theater companies, and related organizations in the Greater
+      Boston area. If you or your organization have events to include on
+      StagePage, please <a href="#">submit them here</a>.
     </Typography>
-    <Typography variant="h3" gutterBottom>
+    <Typography variant="h2" gutterBottom>
       About StageSource
+    </Typography>
+    <Typography paragraph>
+      StageSource provides leadership and services to advance the art of theater
+      in the Greater Boston region. Our mission is to unite theater artists,
+      theater companies, and related organizations in vision and goals that
+      inspire and empower our community to realize its greatest artistic
+      potential.
     </Typography>
     <Typography paragraph>
       Founded in 1985, StageSource is a non-profit theater service organization
@@ -33,33 +60,30 @@ const About = () => (
       of thousands more through our member theaters. Our members are located
       throughout New England, New York and beyond.
     </Typography>
-    <Typography>Mission</Typography>
+
     <Typography paragraph>
-      StageSource provides leadership and services to advance the art of theater
-      in the Greater Boston region. Our mission is to unite theater artists,
-      theater companies, and related organizations in vision and goals that
-      inspire and empower our community to realize its greatest artistic
-      potential.
-    </Typography>
-    <Typography paragraph>
-      StageSource is dedicated to: Increasing cultural participation through
+      StageSource is dedicated to increasing cultural participation through
       advocacy, communication, and education. Providing information,
       initiatives, and resources to established and emerging theater artists and
       organizations in the areas of employment, professional development, and
       institutional growth. Fostering access and non-discrimination in the
       belief that theater should shape, as well as be shaped by, the diversity
       of the community it represents.
+      <Button variant="contained" color="secondary">
+        Become a StageSource Member
+      </Button>
     </Typography>
-    <Paper>
+    <Paper className={classes.paper}>
       <Typography variant="h3">About Opus Affair</Typography>
       <Typography gutterBottom>
-        Opus Barbarina lo chiuso duettino contadine vien sedia infamar fioretti
-        padroncina. Affetto tasca polmon bene gi meco voi fiori ceffo non! Io la
-        con uom te farla ei Cherubino costui aria! Volpe cor Marcellina si qua
-        rimandate signor Susanna vien egli.
+        Opus Affair built the StagePage site and powers it with their calendar
+        database, which powers other arts calendars with shared event listings.
       </Typography>
+      <Button variant="contained" color="primary">
+        Learn More
+      </Button>
     </Paper>
   </div>
 );
 
-export default About;
+export default withStyles(styles, { withTheme: true })(About);

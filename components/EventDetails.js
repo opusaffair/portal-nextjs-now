@@ -45,7 +45,14 @@ const styles = theme => ({
     fontSize: "1.2em",
     paddingTop: theme.spacing.unit * 2
   },
-  venueAddress: {},
+  venueAddress: {
+    "& a": {
+      color: theme.palette.primary.main,
+      "&:hover": {
+        color: theme.palette.secondary.main
+      }
+    }
+  },
   presentedBy: {
     fontWeight: 700,
     fontSize: "1.4em"
@@ -64,6 +71,7 @@ export const eventDetailQuery = gql`
       ticket_link
       org_names
       venues {
+        opus_id
         name
         address
         city
@@ -166,7 +174,7 @@ const EventDetails = ({ theme, classes, slug }) => {
                       <Typography className={classes.venueAddress}>
                         {venues.map(venue => {
                           return (
-                            <div>
+                            <Fragment key={venue.opus_id}>
                               {venue.name}
                               <br />
                               <a
@@ -179,7 +187,7 @@ const EventDetails = ({ theme, classes, slug }) => {
                               } ${venue.zip_code}`}</a>
                               <br />
                               <br />
-                            </div>
+                            </Fragment>
                           );
                         })}
                       </Typography>
@@ -211,7 +219,13 @@ const EventDetails = ({ theme, classes, slug }) => {
                     height: 500,
                     alt: event.title
                   }
-                ]
+                ],
+                openGraph: {
+                  type: "website",
+                  url: `https://stagepage.now.sh/events/${event.slug}`,
+                  title: event.title,
+                  description: event.organizer_desc
+                }
               }}
             />
           </div>

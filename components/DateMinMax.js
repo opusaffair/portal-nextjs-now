@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import { TextField } from "@material-ui/core";
 import { connectRange } from "react-instantsearch-dom";
+import { withStyles } from "@material-ui/core/styles";
 import {
   timeStampToShortDate,
   dateToUnixTs,
   todayPlusDays
 } from "../lib/date-helpers";
+
+const styles = theme => ({
+  // filters: {
+  //   padding: `${theme.spacing.unit * 3}px 0`
+  // }
+});
 
 class DateMinMax extends Component {
   constructor(props) {
@@ -29,6 +36,7 @@ class DateMinMax extends Component {
   };
   render() {
     const { min, max } = this.state;
+    const { classes } = this.props;
     return (
       <div>
         <TimeStampFilter
@@ -69,7 +77,7 @@ class TimeStampField extends React.Component {
     }
   };
   render() {
-    const { name, label } = this.props;
+    const { name, label, classes } = this.props;
     const { date } = this.state;
     return (
       <TextField
@@ -86,4 +94,6 @@ class TimeStampField extends React.Component {
     );
   }
 }
-const TimeStampFilter = connectRange(TimeStampField);
+const TimeStampFilter = withStyles(styles, { withTheme: true })(
+  connectRange(TimeStampField)
+);

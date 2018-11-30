@@ -1,7 +1,8 @@
 {
     "version": 2,
     "builds": [
-      { "src": "package.json", "use": "@now/next@canary", "config":{"maxLambdaSize":"18mb"} } ],
+      { "src": "package.json", "use": "@now/next@canary", "config":{"maxLambdaSize":"18mb"} },
+    {"src":"loaderio-314f709d8ac2d89d0ac14a8ea80230d8.txt","use": "@now/static"} ],
     "env":{
       "ALGOLIA_APP_ID": "@algolia-app-id",
       "ALGOLIA_API_KEY":"@algolia-api-key",

@@ -12,10 +12,16 @@ const styles = theme => ({
     maxWidth: theme.breakpoints.values.lg,
     alignItems: "center",
     margin: "auto",
-    padding: `0 ${theme.spacing.unit}px`
-  },
-  "a:active": {
-    color: theme.palette.secondary.main
+    padding: `0 ${theme.spacing.unit}px`,
+    "& a": {
+      color: theme.palette.secondary.main,
+      "&:hover": {
+        color: theme.palette.primary.main
+      },
+      "&:active": {
+        color: theme.palette.secondary.main
+      }
+    }
   }
 });
 
