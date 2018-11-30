@@ -78,7 +78,7 @@ const About = ({ classes }) => (
       </Button>
     </Typography>
     <Paper className={classes.paper}>
-      <Typography variant="h3">About Opus Affair</Typography>
+      <Typography variant="h3">Opus Affair</Typography>
       <Typography gutterBottom>
         Opus Affair built the StagePage site and powers it with their calendar
         database, which powers other arts calendars with shared event listings.
