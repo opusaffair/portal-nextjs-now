@@ -83,7 +83,11 @@ const About = ({ classes }) => (
         Opus Affair built the StagePage site and powers it with their calendar
         database, which powers other arts calendars with shared event listings.
       </Typography>
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        href="https://www.opusaffair.com"
+      >
         Learn More
       </Button>
     </Paper>

@@ -13,7 +13,7 @@ const styles = theme => ({
     alignItems: "center",
     margin: "auto",
     padding: `0 ${theme.spacing.unit}px`,
-    "& a": {
+    "& a:not([role='button'])": {
       color: theme.palette.secondary.main,
       "&:hover": {
         color: theme.palette.primary.main
