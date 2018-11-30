@@ -69,7 +69,11 @@ const About = ({ classes }) => (
       institutional growth. Fostering access and non-discrimination in the
       belief that theater should shape, as well as be shaped by, the diversity
       of the community it represents.
-      <Button variant="contained" color="secondary">
+      <Button
+        variant="contained"
+        color="secondary"
+        href="https://www.stagesource.org/"
+      >
         Become a StageSource Member
       </Button>
     </Typography>
