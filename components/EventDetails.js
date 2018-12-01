@@ -7,6 +7,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import NextSeo from "next-seo";
+import Head from "next/head";
 import Error from "../pages/_error";
 import { displayTimeDateRange } from "../lib/date-helpers";
 import Loading from "./Loading";
@@ -209,25 +210,32 @@ const EventDetails = ({ theme, classes, slug }) => {
               config={{
                 title: event.title,
                 description: event.organizer_desc,
-                canonical: `https://stagepage.now.sh/events/${event.slug}`,
-                images: [
-                  {
-                    url: `https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces,h_500,w_1200,z_0.3/${
-                      event.image_url
-                    }`,
-                    width: 1200,
-                    height: 500,
-                    alt: event.title
-                  }
-                ],
+                // images: [
+                //   {
+                //     url: `https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces,h_500,w_1200,z_0.3/${
+                //       event.image_url
+                //     }`,
+                //     width: 1200,
+                //     height: 500,
+                //     alt: event.title
+                //   }
+                // ],
                 openGraph: {
                   type: "website",
-                  url: `https://stagepage.now.sh/events/${event.slug}`,
+                  // url: `https://stagepage.now.sh/events/${event.slug}`,
                   title: event.title,
                   description: event.organizer_desc
                 }
               }}
             />
+            <Head>
+              <meta
+                property="og:image"
+                content={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces,h_500,w_1200,z_0.3/${
+                  event.image_url
+                }`}
+              />
+            </Head>
           </div>
         );
       }}
