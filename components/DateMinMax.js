@@ -70,7 +70,7 @@ class TimeStampField extends React.Component {
   handleDateChange = e => {
     const { name, value } = e.target;
     const ts = dateToUnixTs(value, this.props.up);
-    console.log(ts);
+    // console.log(ts);
     this.setState({ date: value });
     if (ts) {
       this.props.refine({ [name]: ts });
