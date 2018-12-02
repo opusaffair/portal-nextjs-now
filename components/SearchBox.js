@@ -9,8 +9,12 @@ const styles = theme => ({
     display: "flex",
     alignItems: "baseline",
     flexGrow: 1,
-    marginBottom: theme.spacing.unit * 4
+    marginBottom: theme.spacing.unit * 4,
+    marginTop: 0
   }
+  // textField: {
+  //   marginTop: theme.spacing.unit
+  // }
 });
 
 const MaterialUiSearchBox = ({ currentRefinement, refine, classes }) => {
@@ -23,6 +27,7 @@ const MaterialUiSearchBox = ({ currentRefinement, refine, classes }) => {
         id="SearchBox"
         fullWidth={true}
         InputProps={{ startAdornment: <Search /> }}
+        className={classes.textField}
       />
     </div>
   );

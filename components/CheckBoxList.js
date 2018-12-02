@@ -14,7 +14,7 @@ const styles = theme => ({
     padding: theme.spacing.unit
   },
   badge: {
-    top: "1px"
+    top: 0
   }
 });
 

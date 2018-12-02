@@ -18,9 +18,9 @@ import DateMinMax from "./DateMinMax";
 import SearchBox from "./SearchBox";
 
 const styles = theme => ({
-  filters: {
-    padding: `${theme.spacing.units * 4}px 0`
-  }
+  // filters: {
+  //   marginTop: theme.spacing.units * 3
+  // }
 });
 
 class SearchPage extends React.Component {
@@ -51,7 +51,7 @@ class SearchPage extends React.Component {
           <ExpansionPanelDetails>
             <Grid container>
               <Grid item lg={4} md={6} sm={12} xs={12}>
-                <SearchBox className={classes.filters} />
+                <SearchBox />
               </Grid>
               <Grid item lg={4} md={6} sm={12} xs={12}>
                 <DateMinMax searchState={this.props.searchState} />
