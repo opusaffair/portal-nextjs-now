@@ -9,12 +9,8 @@ const styles = theme => ({
     display: "flex",
     alignItems: "baseline",
     flexGrow: 1,
-    marginBottom: theme.spacing.unit * 4,
-    marginTop: 0
+    marginBottom: theme.spacing.unit * 4
   }
-  // textField: {
-  //   marginTop: theme.spacing.unit
-  // }
 });
 
 const MaterialUiSearchBox = ({ currentRefinement, refine, classes }) => {
@@ -25,6 +21,7 @@ const MaterialUiSearchBox = ({ currentRefinement, refine, classes }) => {
         value={currentRefinement}
         onChange={e => refine(e.target.value)}
         id="SearchBox"
+        type="text"
         fullWidth={true}
         InputProps={{ startAdornment: <Search /> }}
         className={classes.textField}
@@ -33,5 +30,7 @@ const MaterialUiSearchBox = ({ currentRefinement, refine, classes }) => {
   );
 };
 
-const ConnectedSearchBox = connectSearchBox(MaterialUiSearchBox);
-export default withStyles(styles, { withTheme: true })(ConnectedSearchBox);
+const ConnectedSearchBox = connectSearchBox(
+  withStyles(styles, { withTheme: true })(MaterialUiSearchBox)
+);
+export default ConnectedSearchBox;

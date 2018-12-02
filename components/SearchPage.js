@@ -18,9 +18,11 @@ import DateMinMax from "./DateMinMax";
 import SearchBox from "./SearchBox";
 
 const styles = theme => ({
-  // filters: {
-  //   marginTop: theme.spacing.units * 3
-  // }
+  panel: {
+    "& input": {
+      height: theme.spacing.unit * 3
+    }
+  }
 });
 
 class SearchPage extends React.Component {
@@ -48,7 +50,7 @@ class SearchPage extends React.Component {
           <ExpansionPanelSummary expandIcon={<SortIcon />}>
             <Typography>{open ? "Hide" : "Show"} Filters</Typography>
           </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
+          <ExpansionPanelDetails className={classes.panel}>
             <Grid container>
               <Grid item lg={4} md={6} sm={12} xs={12}>
                 <SearchBox />

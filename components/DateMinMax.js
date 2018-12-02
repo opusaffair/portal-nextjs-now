@@ -89,6 +89,7 @@ class TimeStampField extends React.Component {
         label={label}
         value={date}
         name={name}
+        className={classes.filters}
         onChange={this.handleDateChange}
         InputLabelProps={{
           shrink: true
