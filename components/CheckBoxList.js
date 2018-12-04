@@ -32,7 +32,7 @@ const CheckBoxItem = ({ item, refine, classes }) => (
       badgeContent={item.count}
       color="secondary"
     >
-      <ListItemText primary={item.label} />
+      <ListItemText primary={item.label.replace(/\[.*] /, "")} />
     </Badge>
   </ListItem>
 );

@@ -12,7 +12,8 @@ export const visibleTagFilters = [
   "Holiday",
   "Shakespeare / Classical Theater",
   "Musical",
-  "Opera"
+  "Opera",
+  "[StageSource] Standing O"
 ];
 
 export default PortalVirtualMenu;
