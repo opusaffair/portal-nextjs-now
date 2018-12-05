@@ -21,12 +21,16 @@ const MaterialUiSearchBox = ({ currentRefinement, refine, classes }) => {
         value={currentRefinement}
         onChange={e => refine(e.target.value)}
         id="SearchBox"
+        type="text"
         fullWidth={true}
         InputProps={{ startAdornment: <Search /> }}
+        className={classes.textField}
       />
     </div>
   );
 };
 
-const ConnectedSearchBox = connectSearchBox(MaterialUiSearchBox);
-export default withStyles(styles, { withTheme: true })(ConnectedSearchBox);
+const ConnectedSearchBox = connectSearchBox(
+  withStyles(styles, { withTheme: true })(MaterialUiSearchBox)
+);
+export default ConnectedSearchBox;

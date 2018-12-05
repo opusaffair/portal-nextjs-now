@@ -9,9 +9,9 @@ import {
 } from "../lib/date-helpers";
 
 const styles = theme => ({
-  // filters: {
-  //   padding: `${theme.spacing.unit * 3}px 0`
-  // }
+  root: {
+    marginTop: 0
+  }
 });
 
 class DateMinMax extends Component {
@@ -38,7 +38,7 @@ class DateMinMax extends Component {
     const { min, max } = this.state;
     const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.root}>
         <TimeStampFilter
           label="Start Date"
           attribute="end_date"
@@ -46,6 +46,7 @@ class DateMinMax extends Component {
           value={min}
           defaultRefinement={{ min }}
           onChange={this.onChange}
+          classes={classes}
         />
         <TimeStampFilter
           label="End Date"
@@ -54,6 +55,7 @@ class DateMinMax extends Component {
           name="max"
           defaultRefinement={{ max }}
           onChange={this.onChange}
+          classes={classes}
           up
         />
       </div>
@@ -61,7 +63,7 @@ class DateMinMax extends Component {
   }
 }
 
-export default DateMinMax;
+export default withStyles(styles, { withTheme: true })(DateMinMax);
 
 class TimeStampField extends React.Component {
   state = {
@@ -70,9 +72,10 @@ class TimeStampField extends React.Component {
   handleDateChange = e => {
     const { name, value } = e.target;
     const ts = dateToUnixTs(value, this.props.up);
+    // console.log(ts);
+    this.setState({ date: value });
     if (ts) {
       this.props.refine({ [name]: ts });
-      this.setState({ date: value });
       this.props.onChange({ target: { name, value: ts } });
     }
   };
@@ -86,6 +89,7 @@ class TimeStampField extends React.Component {
         label={label}
         value={date}
         name={name}
+        className={classes.filters}
         onChange={this.handleDateChange}
         InputLabelProps={{
           shrink: true
@@ -94,6 +98,4 @@ class TimeStampField extends React.Component {
     );
   }
 }
-const TimeStampFilter = withStyles(styles, { withTheme: true })(
-  connectRange(TimeStampField)
-);
+const TimeStampFilter = connectRange(TimeStampField);

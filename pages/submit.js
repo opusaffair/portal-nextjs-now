@@ -1,5 +1,4 @@
 import Typography from "@material-ui/core/Typography";
-import Wufoo from "react-wufoo-embed";
 const Submit = () => (
   <div className="container">
     <Typography variant="h2" gutterBottom>
@@ -18,7 +17,6 @@ const Submit = () => (
       Conte Figaro il la un esser. Destino ma com furor venere accompagna obliar
       per antonio cosa.
     </Typography>
-    <Wufoo userName="opusaffairtest" formHash="z1ixzerb0oocdb5" header="hide" />
   </div>
 );
 

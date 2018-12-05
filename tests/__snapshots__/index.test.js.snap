@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing Header renders 1`] = `
+<header
+  className="MuiPaper-root-11 MuiPaper-elevation4-17 MuiAppBar-root-2 MuiAppBar-positionFixed-3 MuiAppBar-colorPrimary-9 mui-fixed"
+  postition="static"
+>
+  <div
+    className="MuiToolbar-root-38 MuiToolbar-regular-40 MuiToolbar-gutters-39 Header-innerToolbar-1"
+  >
+    <button
+      className="MuiButtonBase-root-69 MuiButton-root-43 MuiButton-text-45 MuiButton-flat-48 MuiButton-colorInherit-64 Logo-logo-42"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiButton-label-44"
+      >
+        StagePage
+      </span>
+      <span
+        className="MuiTouchRipple-root-72"
+      />
+    </button>
+    <button
+      className="MuiButtonBase-root-69 MuiButton-root-43 MuiButton-text-45 MuiButton-flat-48 MuiButton-colorInherit-64"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiButton-label-44"
+      >
+        About
+      </span>
+      <span
+        className="MuiTouchRipple-root-72"
+      />
+    </button>
+  </div>
+</header>
+`;

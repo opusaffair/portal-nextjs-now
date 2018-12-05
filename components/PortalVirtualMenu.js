@@ -3,7 +3,10 @@ import { connectMenu } from "react-instantsearch-dom";
 const VirtualMenu = connectMenu(() => null);
 
 const PortalVirtualMenu = () => (
-  <VirtualMenu attribute="tags" defaultRefinement="[StageSource] StagePage" />
+  <Fragment>
+    <VirtualMenu attribute="tags" defaultRefinement="[StageSource] StagePage" />
+    <VirtualMenu attribute="published" defaultRefinement="true" />
+  </Fragment>
 );
 
 export const visibleTagFilters = [
@@ -12,7 +15,8 @@ export const visibleTagFilters = [
   "Holiday",
   "Shakespeare / Classical Theater",
   "Musical",
-  "Opera"
+  "Opera",
+  "[StageSource] Standing O"
 ];
 
 export default PortalVirtualMenu;

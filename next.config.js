@@ -1,6 +1,6 @@
 const { ANALYZE, NODE_ENV } = process.env;
 
-if (NODE_ENV === "development") {
+if (NODE_ENV !== "production") {
   require("now-env");
 }
 
