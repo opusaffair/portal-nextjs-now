@@ -71,6 +71,7 @@ export const eventDetailQuery = gql`
       end_datetime
       ticket_link
       org_names
+      published
       venues {
         opus_id
         name
@@ -95,7 +96,7 @@ const EventDetails = ({ theme, classes, slug }) => {
         if (error) return <Error error={error} />;
         if (loading) return <Loading />;
         const { event } = data;
-        if (!event) return <div>No match</div>;
+        if (!event || !event.published) return <div>No match</div>;
         const { venues, org_names } = event;
         return (
           <div>
