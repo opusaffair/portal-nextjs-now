@@ -7,7 +7,7 @@ const styles = theme => ({
   root: {
     "& h1, h2, h3": {
       fontWeight: 700,
-      paddingTop: theme.spacing.unit
+      paddingTop: `${theme.spacing.unit * 3}px`
     },
     "& h1": {
       fontSize: "2.8em"
@@ -37,10 +37,17 @@ const About = ({ classes }) => (
       StagePage lists performances from StageSource members—including theater
       artists, theater companies, and related organizations in the Greater
       Boston area. If you or your organization have events to include on
-      StagePage, please <a href="#">submit them here</a>.
+      StagePage, please{" "}
+      <a
+        href="https://stagesource.wufoo.com/forms/ro7wwyz1mraq2z/"
+        target="_blank"
+      >
+        submit them here
+      </a>
+      .
     </Typography>
-    <Typography variant="h2" gutterBottom>
-      About StageSource
+    <Typography variant="h3">
+      <img src="/static/stagesource-logo.png" width="350" alt="StageSource" />
     </Typography>
     <Typography paragraph>
       StageSource provides leadership and services to advance the art of theater
@@ -69,28 +76,43 @@ const About = ({ classes }) => (
       institutional growth. Fostering access and non-discrimination in the
       belief that theater should shape, as well as be shaped by, the diversity
       of the community it represents.
-      <Button
-        variant="contained"
-        color="secondary"
-        href="https://www.stagesource.org/"
-      >
-        Become a StageSource Member
-      </Button>
     </Typography>
-    <Paper className={classes.paper}>
-      <Typography variant="h3">Opus Affair</Typography>
-      <Typography gutterBottom>
-        Opus Affair built the StagePage site and powers it with their calendar
-        database, which powers other arts calendars with shared event listings.
-      </Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        href="https://www.opusaffair.com"
-      >
-        Learn More
-      </Button>
-    </Paper>
+    <Button
+      variant="contained"
+      color="primary"
+      href="https://www.stagesource.org/"
+    >
+      Become a StageSource Member
+    </Button>
+    {/* <Paper className={classes.paper}> */}
+    <br />
+    <Typography variant="h3">
+      <img src="/static/opusaffair-logo.png" alt="Opus Affair" width="350" />
+    </Typography>
+
+    <Typography paragraph>
+      Opus Affair built this StagePage site as part of their Common Calendar
+      project, building a shared event database to power arts event calendars,
+      like StagePage, the{" "}
+      <a href="https://www.bostonoperacalendar.org/" target="_blank">
+        Boston Opera Calendar
+      </a>
+      , and the{" "}
+      <a href="https://www.opusaffair.com/calendar/" target="_blank">
+        Opus Affair Calendar
+      </a>
+      . They also host a monthly networking event for anyone interested in the
+      arts in Boston—and provide design and digital marketing services to arts
+      and culture organizations across the country.
+    </Typography>
+    <Button
+      variant="contained"
+      color="primary"
+      href="https://www.opusaffair.com"
+    >
+      Learn More About Opus Affair
+    </Button>
+    {/* </Paper> */}
   </div>
 );
 

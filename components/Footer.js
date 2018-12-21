@@ -27,7 +27,7 @@ const styles = theme => ({
 
 const Footer = ({ classes }) => {
   return (
-    <div postition="absolute" color="default" className={classes.root}>
+    <AppBar postition="absolute" color="default" className={classes.root}>
       <Toolbar className={classes.innerToolbar}>
         <a href="https://www.stagesource.org/" target="_blank">
           <Button color="inherit" className={classes.button}>
@@ -35,7 +35,7 @@ const Footer = ({ classes }) => {
           </Button>
         </a>
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdyTA3rSTtOMfTrloWhI-LR8JpLeQcMFS5s6wpDcGenupt4XA/viewform?formkey=dGRyQ0RrNU5HLXBFdEdWaXp2WFB4elE6MQ#gid=0"
+          href="https://stagesource.wufoo.com/forms/ro7wwyz1mraq2z/"
           target="_blank"
         >
           <Button color="inherit" className={classes.button}>
@@ -48,7 +48,7 @@ const Footer = ({ classes }) => {
           </Button>
         </a>
       </Toolbar>
-    </div>
+    </AppBar>
   );
 };
 

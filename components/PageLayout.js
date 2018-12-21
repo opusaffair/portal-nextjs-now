@@ -24,7 +24,7 @@ const styles = theme => ({
     }
   },
   main: {
-    height: "100vw"
+    // height: "100vw"
   }
 });
 
