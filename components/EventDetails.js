@@ -36,8 +36,12 @@ const styles = theme => ({
     fontWeight: 700,
     fontSize: "2.75em"
   },
+  superTitle: {
+    fontWeight: 700,
+    fontSize: "1.2em"
+  },
   date: {
-    fontSize: "1.8em"
+    fontSize: "1.4em"
   },
   opuslink: {
     marginTop: theme.spacing.unit * 10
@@ -68,6 +72,7 @@ export const eventDetailQuery = gql`
       image_url
       organizer_desc
       slug
+      supertitle_creative
       start_datetime
       end_datetime
       ticket_link
@@ -131,8 +136,8 @@ const EventDetails = ({ theme, classes, slug }) => {
               />
             </picture>
             <Paper className={classes.root}>
-              <Typography className={classes.superTitle}>
-                {event.creative_supertitle}
+              <Typography className={classes.superTitle} variant="h3">
+                {event.supertitle_creative}
               </Typography>
               <Typography
                 component="h1"

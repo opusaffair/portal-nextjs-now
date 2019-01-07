@@ -7,7 +7,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "offline": "serverless offline start",
+    "offline": "next build && serverless offline start",
     "deploy": "npm run build && serverless deploy",
     "test": "jest"
   },
