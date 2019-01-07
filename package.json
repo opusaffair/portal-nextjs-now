@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production next start",
-    "lambda": "next build --lambdas",
+    "start": "NODE_ENV=production node server.js",
+    "offline": "serverless offline start",
+    "deploy": "npm run build && serverless deploy",
     "test": "jest"
   },
   "dependencies": {
@@ -15,6 +16,8 @@
     "@material-ui/icons": "^3.0.1",
     "apollo-boost": "0.1.20",
     "apollo-client": "^2.4.7",
+    "aws-serverless-express": "^3.3.5",
+    "express": "^4.16.4",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
     "isomorphic-fetch": "^2.2.1",
@@ -28,6 +31,8 @@
     "react-dom": "16.6.1",
     "react-instantsearch-dom": "5.3.2",
     "react-jss": "^8.6.1",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-domain-manager": "^2.6.10",
     "striptags": "^3.1.1"
   },
   "devDependencies": {
@@ -39,6 +44,7 @@
     "jest": "^23.6.0",
     "now-env": "3.1.0",
     "react-addons-test-utils": "15.6.2",
-    "react-test-renderer": "16.4.2"
+    "react-test-renderer": "16.4.2",
+    "serverless-offline": "^3.31.3"
   }
 }
