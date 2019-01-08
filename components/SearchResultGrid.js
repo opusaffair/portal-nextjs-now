@@ -76,7 +76,7 @@ const SearchResultGrid = ({ hits, classes, theme }) => (
                 </picture>
               </div>
               <CardContent>
-                <Typography>{event.supertitle_creative}</Typography>
+                <Typography>{event.supertitle}</Typography>
                 <Typography variant="h2" className={classes.title}>
                   {event.title}
                 </Typography>

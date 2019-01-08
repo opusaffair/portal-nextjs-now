@@ -31,7 +31,10 @@ const styles = theme => ({
     },
     "& .ais-Pagination-link--selected": {
       backgroundColor: theme.palette.primary.main,
-      border: "none"
+      border: "none",
+      "&:hover": {
+        color: theme.palette.secondary.main
+      }
     }
   }
 });
