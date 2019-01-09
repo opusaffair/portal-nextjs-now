@@ -38,7 +38,7 @@ class SearchPage extends React.Component {
   render() {
     const { classes, theme } = this.props;
     const { open } = this.state;
-    const image1 = `https://res.cloudinary.com/opusaffair/image/upload/c_fill,dpr_auto,f_auto,g_faces:auto,h_350,w_1200/v1546881962/StagePage/stagepage-banner1.jpg`;
+    const image1 = `https://res.cloudinary.com/opusaffair/image/upload/c_fill,dpr_auto,f_auto,g_faces:auto,h_250,w_1264/v1546881962/StagePage/stagepage-banner1.jpg`;
     return (
       <InstantSearch
         appId={publicRuntimeConfig.ALGOLIA_APP_ID}
@@ -53,9 +53,10 @@ class SearchPage extends React.Component {
         <PortalVirtualMenu />
         <div
           style={{
-            background: `url(${image1}) no-repeat center center fixed`,
+            backgroundImage: `url(${image1})`,
             backgroundSize: "cover",
-            // overflow: "hidden",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
             height: 250,
             display: "flex"
           }}
