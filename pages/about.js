@@ -34,48 +34,25 @@ const About = ({ classes }) => (
       StagePage
     </Typography>
     <Typography paragraph>
-      StagePage lists performances from StageSource members—including theater
-      artists, theater companies, and related organizations in the Greater
-      Boston area. If you or your organization have events to include on
-      StagePage, please{" "}
-      <a
-        href="https://stagesource.wufoo.com/forms/ro7wwyz1mraq2z/"
-        target="_blank"
-      >
-        submit them here
-      </a>
-      .
+      Welcome to the new StagePage, your digital portal to New England Theatre.
+      Want to know what’s good in Rhode Island,looking for a little night music
+      up in Maine, well you’re on the right track. Browse through hundreds of
+      theatre listings that will take you all the way from Saturday night to
+      Sunday morning and beyond. If you’re looking for theatre in New England,
+      your first stop needs to be the StagePage!
     </Typography>
     <Typography variant="h3">
       <img src="/static/stagesource-logo.png" width="350" alt="StageSource" />
     </Typography>
     <Typography paragraph>
       StageSource provides leadership and services to advance the art of theater
-      in the Greater Boston region. Our mission is to unite theater artists,
-      theater companies, and related organizations in vision and goals that
-      inspire and empower our community to realize its greatest artistic
-      potential.
-    </Typography>
-    <Typography paragraph>
-      Founded in 1985, StageSource is a non-profit theater service organization
-      led by staff in our Boston offices, a Board of Directors, member
-      volunteers and advisory committees representing our members. StageSource
-      reaches over 6,000 households and businesses including individual theater
-      artists (actors, directors, designers, playwrights, and other theater
-      professionals), 220 theater, film, casting, audio, video, service and
-      theater support companies, and over 50,000 patrons directly and hundreds
-      of thousands more through our member theaters. Our members are located
-      throughout New England, New York and beyond.
-    </Typography>
-
-    <Typography paragraph>
-      StageSource is dedicated to increasing cultural participation through
-      advocacy, communication, and education. Providing information,
-      initiatives, and resources to established and emerging theater artists and
-      organizations in the areas of employment, professional development, and
-      institutional growth. Fostering access and non-discrimination in the
-      belief that theater should shape, as well as be shaped by, the diversity
-      of the community it represents.
+      in the Greater New England region, uniting theater artists, theater
+      companies, and collaborators in vision and goals that inspire and empower
+      our community to realize its greatest artistic potential through workforce
+      development and sector improvement. Want to know more? Visit us at{" "}
+      <a href="https://www.stagesource.org" target="_blank">
+        stagesource.org
+      </a>
     </Typography>
     <Button
       variant="contained"
