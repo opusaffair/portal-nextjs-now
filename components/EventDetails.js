@@ -110,26 +110,26 @@ const EventDetails = ({ theme, classes, slug }) => {
               <source
                 media={`(min-width: ${theme.breakpoints.values.lg}px)`}
                 sizes="100vw"
-                srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_500,w_1200,z_0.3/${
+                srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_500,w_1200,z_0.3/${
                   event.image_url
                 }`}
               />
               <source
                 media={`(min-width: ${theme.breakpoints.values.md}px)`}
                 sizes="100vw"
-                srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_375,w_900,z_0.3/${
+                srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_375,w_900,z_0.3/${
                   event.image_url
                 }`}
               />
               <source
                 media={`(min-width: ${theme.breakpoints.values.sm}px)`}
                 sizes="100vw"
-                srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_363,w_950,z_0.3/${
+                srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_363,w_950,z_0.3/${
                   event.image_url
                 }`}
               />
               <img
-                srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_200,w_548,z_0.3/${
+                srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_200,w_548,z_0.3/${
                   event.image_url
                 }`}
                 className={classes.img}
@@ -238,7 +238,7 @@ const EventDetails = ({ theme, classes, slug }) => {
             <Head>
               <meta
                 property="og:image"
-                content={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_500,w_1200,z_0.3/${
+                content={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_500,w_1200,z_0.3/${
                   event.image_url
                 }`}
               />

@@ -42,33 +42,33 @@ const SearchResultGrid = ({ hits, classes, theme }) => (
                   <source
                     media={`(min-width: ${theme.breakpoints.values.xl}px)`}
                     sizes="100vw"
-                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_250,w_304,z_0.3/${
+                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_250,w_304,z_0.3/${
                       event.image_url
                     }`}
                   />
                   <source
                     media={`(min-width: ${theme.breakpoints.values.lg}px)`}
                     sizes="100vw"
-                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_210,w_304,z_0.3/${
+                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_210,w_304,z_0.3/${
                       event.image_url
                     }`}
                   />
                   <source
                     media={`(min-width: ${theme.breakpoints.values.md}px)`}
                     sizes="100vw"
-                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_210,w_616,z_0.3/${
+                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_210,w_616,z_0.3/${
                       event.image_url
                     }`}
                   />
                   <source
                     media={`(min-width: ${theme.breakpoints.values.sm}px)`}
                     sizes="100vw"
-                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_363,w_950,z_0.3/${
+                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_363,w_950,z_0.3/${
                       event.image_url
                     }`}
                   />
                   <img
-                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_faces:auto,h_200,w_548,z_0.3/${
+                    srcSet={`https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_200,w_548,z_0.3/${
                       event.image_url
                     }`}
                     className={classes.img}

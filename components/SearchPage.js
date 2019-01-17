@@ -75,7 +75,7 @@ class SearchPage extends React.Component {
                 textShadow: `rgb(0, 0, 0) 0px 0px 39px`
               }}
             >
-              Your theatrical journey starts here
+              Your theatrical journey starts here!
             </Typography>
           </div>
         </div>

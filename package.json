@@ -9,6 +9,7 @@
     "start": "NODE_ENV=production node server.js",
     "offline": "next build && serverless offline start",
     "deploy": "npm run build && serverless deploy",
+    "deploy-prod": "npm run build && serverless deploy --stage prod",
     "test": "jest"
   },
   "dependencies": {
