@@ -22,6 +22,10 @@ class MyDocument extends Document {
             content="initial-scale=1.0, minimum-scale=1.0, width=device-width"
             key="viewport"
           />
+          <meta
+            name="google-site-verification"
+            content="DSbSgv3_HO_08XigcJX8XzJOmgjoORqSSambksn4ZLQ"
+          />
           <link rel="icon" href="/static/favicon.ico" key="favicon" />
           <link
             href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Roboto+Condensed:400,400i,700"

@@ -41,7 +41,8 @@ const styles = theme => ({
     fontSize: "1.2em"
   },
   date: {
-    fontSize: "1.4em"
+    fontSize: "1.4em",
+    lineHeight: "1.5em"
   },
   opuslink: {
     marginTop: theme.spacing.unit * 10
@@ -62,6 +63,9 @@ const styles = theme => ({
   presentedBy: {
     fontWeight: 700,
     fontSize: "1.4em"
+  },
+  desc: {
+    marginTop: 0
   }
 });
 
@@ -155,7 +159,7 @@ const EventDetails = ({ theme, classes, slug }) => {
                   Presented by {org_names}
                 </Typography>
               )}
-              <Grid container spacing={24}>
+              <Grid container spacing={24} className={classes.desc}>
                 <Grid item lg={8} md={12}>
                   <span
                     className={classes.para}

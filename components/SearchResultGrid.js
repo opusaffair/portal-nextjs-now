@@ -33,8 +33,6 @@ const SearchResultGrid = ({ hits, classes, theme }) => (
     {hits.map(event => (
       <Grid item lg={3} md={6} sm={12} xs={12} key={event.objectID}>
         <Link as={`/events/${event.slug}`} href={`/events?slug=${event.slug}`}>
-          {/* For dev purposes, switching away from clean URLs */}
-          {/* <Link href={`/events?slug=${event.slug}`}> */}
           <a>
             <Card className={classes.item}>
               <div>
