@@ -108,6 +108,29 @@ const EventDetails = ({ theme, classes, slug }) => {
         const { event } = data;
         if (!event || !event.published) return <div>No match</div>;
         const { venues, org_names } = event;
+        const jsonldVenues = venues.map(venue => {
+          return `{"@type": "place",
+            "name": "${venue.name}",
+            "address": {
+              "@type": "PostalAddress",
+              "name": "${venue.name}",
+              "streetAddress": "${venue.address}",
+              "addressLocality": "${venue.city}",
+              "addressRegion": "${venue.state}",
+              "postalCode": "${venue.zip_code}"
+            }}`;
+        });
+        const jsonld = `{
+          "@type": "Event",
+          "image": "https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_500,w_1200,z_0.3/${
+            event.image_url
+          }",
+          "description": "${striptags(event.organizer_desc)}",
+          "name": "${event.title}",
+          "startDate": "${event.start_datetime}",
+          "endDate": "${event.end_datetime}",
+          "location": [${jsonldVenues}]
+        }`;
         return (
           <div>
             <picture>
@@ -233,9 +256,9 @@ const EventDetails = ({ theme, classes, slug }) => {
                 // ],
                 openGraph: {
                   type: "website",
-                  // url: `https://stagepage.now.sh/events/${event.slug}`,
+                  url: `https://www.stagepage.org/events/${event.slug}`,
                   title: event.title,
-                  description: event.organizer_desc
+                  description: striptags(event.organizer_desc)
                 }
               }}
             />
@@ -247,6 +270,10 @@ const EventDetails = ({ theme, classes, slug }) => {
                 }`}
               />
             </Head>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: jsonld }}
+            />
           </div>
         );
       }}
