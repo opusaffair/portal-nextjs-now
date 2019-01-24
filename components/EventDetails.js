@@ -12,6 +12,7 @@ import striptags from "striptags";
 import Error from "../pages/_error";
 import { displayTimeDateRange } from "../lib/date-helpers";
 import Loading from "./Loading";
+import escape_quotes from "escape-quotes";
 
 const styles = theme => ({
   root: {
@@ -125,7 +126,10 @@ const EventDetails = ({ theme, classes, slug }) => {
           "image": "https://res.cloudinary.com/opusaffair/image/fetch/c_fill,dpr_auto,f_auto,g_auto,h_500,w_1200,z_0.3/${
             event.image_url
           }",
-          "description": "${striptags(event.organizer_desc)}",
+          "description": "${escape_quotes(
+            striptags(event.organizer_desc),
+            '"'
+          )}",
           "name": "${event.title}",
           "startDate": "${event.start_datetime}",
           "endDate": "${event.end_datetime}",
