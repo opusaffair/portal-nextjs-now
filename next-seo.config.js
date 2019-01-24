@@ -4,7 +4,7 @@ export default {
     "StagePage lists performances from StageSource members—including theater artists, theater companies, and related organizations in the Greater Boston area",
   openGraph: {
     type: "website",
-    // url: "https://stagepage.now.sh/",
+    url: "https://www.stagepage.org",
     title: "StagePage by StageSource",
     description:
       "StagePage lists performances from StageSource members—including theater artists, theater companies, and related organizations in the Greater Boston area",
