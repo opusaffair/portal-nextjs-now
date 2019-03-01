@@ -6,7 +6,7 @@ class MyDocument extends Document {
   render() {
     const { pageContext } = this.props;
     return (
-      <html>
+      <html lang="en">
         <Head>
           <script
             dangerouslySetInnerHTML={{

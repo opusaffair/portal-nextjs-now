@@ -6,13 +6,13 @@ const styles = () => ({
   logo: {
     textTransform: "none",
     fontWeight: 700,
-    fontSize: "1.2em"
+    fontSize: "1.5em"
   }
 });
 const Logo = ({ classes }) => (
   <Link href="/">
     <Button color="inherit" className={classes.logo}>
-      StagePage
+      StagePage by StageSource
     </Button>
   </Link>
 );

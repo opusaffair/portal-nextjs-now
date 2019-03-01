@@ -13,10 +13,9 @@ import PortalVirtualMenu, {
 } from "../components/PortalVirtualMenu";
 import ConnectedCheckBoxRefinementList from "./CheckBoxList";
 import { InstantSearch } from "./InstantSearch";
-import SearchResults from "./SearchResults";
+import InfiniteSearchResults from "./InfiniteSearchResults";
 import DateMinMax from "./DateMinMax";
 import SearchBox from "./SearchBox";
-import { Parallax } from "react-parallax";
 
 const styles = theme => ({
   panel: {
@@ -31,7 +30,7 @@ const styles = theme => ({
 });
 
 class SearchPage extends React.Component {
-  state = { open: true };
+  state = { open: false };
   togglePanel = () => {
     this.setState({ open: !this.state.open });
   };
@@ -51,34 +50,6 @@ class SearchPage extends React.Component {
       >
         <Configure hitsPerPage={12} />
         <PortalVirtualMenu />
-        <div
-          style={{
-            backgroundImage: `url(${image1})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            height: 250,
-            display: "flex"
-          }}
-        >
-          <div
-            style={{
-              margin: "auto"
-            }}
-          >
-            <Typography
-              style={{
-                color: "white",
-                fontWeight: 700,
-                fontSize: "2.2rem",
-                padding: 20,
-                textShadow: `rgb(0, 0, 0) 0px 0px 39px`
-              }}
-            >
-              Your theatrical journey starts here!
-            </Typography>
-          </div>
-        </div>
         <ExpansionPanel expanded={open} onChange={this.togglePanel}>
           <ExpansionPanelSummary expandIcon={<SortIcon />}>
             <Typography>{open ? "Hide" : "Show"} Filters</Typography>
@@ -105,9 +76,8 @@ class SearchPage extends React.Component {
             </Grid>
           </ExpansionPanelDetails>
         </ExpansionPanel>
-
-        <SearchResults />
-        <Typography>Banner photo credit: American Repertory Theater</Typography>
+        <InfiniteSearchResults />
+        {/* <Typography>Banner photo credit: American Repertory Theater</Typography> */}
       </InstantSearch>
     );
   }
