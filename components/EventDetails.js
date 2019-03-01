@@ -164,6 +164,7 @@ const EventDetails = ({ theme, classes, slug }) => {
                   event.image_url
                 }`}
                 className={classes.img}
+                alt={event.title}
               />
             </picture>
             <Paper className={classes.root}>

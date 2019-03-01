@@ -70,6 +70,7 @@ const SearchResultGrid = ({ hits, classes, theme }) => (
                       event.image_url
                     }`}
                     className={classes.img}
+                    alt={event.title}
                   />
                 </picture>
               </div>
