@@ -1,6 +1,6 @@
 import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
-import { Configure } from "react-instantsearch-dom";
+import { Configure, SortBy } from "react-instantsearch-dom";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -30,19 +30,22 @@ const styles = theme => ({
 });
 
 class SearchPage extends React.Component {
-  state = { open: false };
+  state = { open: false, sortByEndDate: true };
   togglePanel = () => {
     this.setState({ open: !this.state.open });
   };
+  toggleSort = () => {
+    this.setState({ sortByEndDate: !this.statet.sortByEndDate });
+  };
   render() {
     const { classes, theme } = this.props;
-    const { open } = this.state;
+    const { open, sortByEndDate } = this.state;
     const image1 = `https://res.cloudinary.com/opusaffair/image/upload/c_fill,dpr_auto,f_auto,g_faces:auto,h_250,w_1264/v1546881962/StagePage/stagepage-banner1.jpg`;
     return (
       <InstantSearch
         appId={publicRuntimeConfig.ALGOLIA_APP_ID}
         apiKey={publicRuntimeConfig.ALGOLIA_API_KEY}
-        indexName="events_end_date_asc"
+        indexName={"events_end_date_asc"}
         resultsState={this.props.resultsState}
         onSearchStateChange={this.props.onSearchStateChange}
         searchState={this.props.searchState}
@@ -63,6 +66,17 @@ class SearchPage extends React.Component {
                 <DateMinMax searchState={this.props.searchState} />
               </Grid>
               <Grid item lg={4} md={12}>
+                <Typography>
+                  Sort by:{" "}
+                  <SortBy
+                    defaultRefinement="events_end_date_asc"
+                    items={[
+                      { value: "events_end_date_asc", label: "End Date" },
+                      { value: "events_start_date_asc", label: "Start Date" }
+                    ]}
+                  />
+                </Typography>
+
                 <ConnectedCheckBoxRefinementList
                   attribute="tags"
                   operator="and"
