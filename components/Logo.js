@@ -12,7 +12,7 @@ const styles = () => ({
 const Logo = ({ classes }) => (
   <Link href="/">
     <Button color="inherit" className={classes.logo}>
-      StagePage by StageSource
+      StagePage
     </Button>
   </Link>
 );
