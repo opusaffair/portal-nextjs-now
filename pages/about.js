@@ -50,7 +50,7 @@ const About = ({ classes }) => (
         <Typography variant="h3">
           <img
             src="/static/stagesource-logo.png"
-            width="350"
+            width="280"
             alt="StageSource"
           />
         </Typography>
@@ -79,7 +79,7 @@ const About = ({ classes }) => (
           <img
             src="/static/opusaffair-logo.png"
             alt="Opus Affair"
-            width="350"
+            width="280"
           />
         </Typography>
         <Typography paragraph>
@@ -105,14 +105,23 @@ const About = ({ classes }) => (
           Learn More About Opus Affair
         </Button>
         <br />
-
-        <Typography variant="h3">About Standing O</Typography>
+        <br />
+        <Typography variant="h3">About the Standing O Designation</Typography>
         <Typography paragraph>
-          An event qualifies for a Standing O if it meets three of the following
-          five criteria: Female Director, Female Playwright, At least 50% Female
-          Cast, At least 50% Female Design Team, or Female-Centered Story
+          The StageSource Gender Parity Task Force's Standing O subcommittee
+          creates and coordinates audience engagement initiatives that promote
+          awareness of and engagement in gender equity in theater. One way that
+          we do this is with the Standing O designation! This designation is
+          given to shows that meet at least three of the five following
+          criteria: Female Director, Female Playwright, At least 50% Female
+          Cast, At least 50% Female Design Team, or Female-Centered Story. To
+          find out more about StageSource's work towards{" "}
+          <a href="https://www.stagesource.org/page/StandingO">
+            Gender Parity click here!
+          </a>
         </Typography>
-        <Typography variant="h3" gutterBottom>
+        <br />
+        <Typography variant="h4" gutterBottom>
           StageSource Partners
         </Typography>
 

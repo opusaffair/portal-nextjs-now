@@ -53,6 +53,9 @@ class SearchPage extends React.Component {
       >
         <Configure hitsPerPage={12} />
         <PortalVirtualMenu />
+        <h1 hidden>
+          StagePage: StageSource's calendar of theater in New England
+        </h1>
         <ExpansionPanel expanded={open} onChange={this.togglePanel}>
           <ExpansionPanelSummary expandIcon={<SortIcon />}>
             <Typography>{open ? "Hide" : "Show"} Filters</Typography>

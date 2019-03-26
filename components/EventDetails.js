@@ -67,6 +67,12 @@ const styles = theme => ({
   },
   desc: {
     marginTop: 0
+  },
+  standingOLogo: {
+    width: "20px",
+    height: "20px",
+    margin: "0px 5px 0px 0px",
+    float: "left"
   }
 });
 
@@ -83,6 +89,9 @@ export const eventDetailQuery = gql`
       ticket_link
       org_names
       published
+      tags {
+        name
+      }
       venues {
         opus_id
         name
@@ -168,9 +177,11 @@ const EventDetails = ({ theme, classes, slug }) => {
               />
             </picture>
             <Paper className={classes.root}>
-              <Typography className={classes.superTitle} variant="h3">
-                {event.supertitle_creative}
-              </Typography>
+              {event.supertitle_creative && (
+                <Typography className={classes.superTitle} variant="h3">
+                  {event.supertitle_creative}
+                </Typography>
+              )}
               <Typography
                 component="h1"
                 variant="h2"
@@ -195,6 +206,25 @@ const EventDetails = ({ theme, classes, slug }) => {
                       __html: `${event.organizer_desc}`
                     }}
                   />
+                  {event.tags &&
+                    event.tags.some(
+                      tag => tag.name === "[StageSource] Standing O"
+                    ) && (
+                      <Fragment>
+                        <img
+                          className={classes.standingOLogo}
+                          src="/static/Standing O Logo.jpg"
+                        />
+                        <Typography>
+                          This production has received a StageSource{" "}
+                          <a href="https://www.stagesource.org/page/StandingO">
+                            Standing O
+                          </a>{" "}
+                          for their work towards achieving gender parity in New
+                          England theatre.
+                        </Typography>
+                      </Fragment>
+                    )}
                 </Grid>
                 <Grid item lg={3} md={6} sm={12} xs={12}>
                   <Button

@@ -17,7 +17,7 @@ const styles = theme => ({
 
 const Header = ({ classes }) => {
   return (
-    <AppBar postition="static" color="primary">
+    <AppBar postition="static" color="primary" role="banner">
       <Toolbar className={classes.innerToolbar}>
         <Logo />
         <Link href="/about">
