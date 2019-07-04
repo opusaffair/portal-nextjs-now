@@ -1,0 +1,44 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - next > webpackbar > table > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - react-instantsearch-dom > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > webpackbar > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > autodll-webpack-plugin > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - react-instantsearch-dom > algoliasearch-helper > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > @babel/core > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - react-instantsearch-dom > react-instantsearch-core > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > @babel/template > @babel/types > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - react-instantsearch-dom > react-instantsearch-core > algoliasearch-helper > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > write-file-webpack-plugin > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > webpackbar > consola > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > styled-jsx > babel-types > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > autodll-webpack-plugin > webpack-merge > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > @babel/preset-env > @babel/plugin-proposal-unicode-property-regex > @babel/helper-regex > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > @babel/core > @babel/traverse > @babel/helper-function-name > @babel/types > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-replace-supers > @babel/traverse > @babel/types > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > @babel/plugin-proposal-class-properties > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
+    - next > @babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2019-07-04T02:15:15.899Z'
