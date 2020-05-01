@@ -10,7 +10,9 @@
     "offline": "next build && serverless offline start",
     "deploy": "npm run build && serverless deploy",
     "deploy-prod": "npm run build && serverless deploy --stage prod",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@material-ui/core": "3.5.1",
@@ -37,7 +39,8 @@
     "react-parallax": "^2.0.1",
     "serverless-apigw-binary": "^0.4.4",
     "serverless-domain-manager": "^2.6.10",
-    "striptags": "^3.1.1"
+    "striptags": "^3.1.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -49,5 +52,6 @@
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "16.4.2",
     "serverless-offline": "^3.31.3"
-  }
+  },
+  "snyk": true
 }
